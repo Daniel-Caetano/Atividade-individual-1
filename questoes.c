@@ -73,6 +73,7 @@ void soma_vetor() {
     scanf("%d", &vetorInteiros[i]);
     soma = soma + vetorInteiros[i];
   }
+  system("cls || clear");
   printf("Vetor de inteiros: |");
   for (int i = 0; i < 10; i++) {
     printf("%d|", vetorInteiros[i]);

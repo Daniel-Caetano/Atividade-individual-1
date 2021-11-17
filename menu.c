@@ -6,11 +6,13 @@
 
 void abertura() {
   system("cls|| clear");
-  printf("|*****************************************|\n");
-  printf("|***************BEM VINDO!!***************|\n");
-  printf("|********Primeira atividade individual****|\n");
-  printf("|****Protocolo Bicicleta com rodinhas*****|\n");
-  printf("|*****************************************|\n");
+  printf("|*******************************************|\n");
+  printf("|***************BEM VINDO!!*****************|\n");
+  printf("|********Primeira atividade individual******|\n");
+  printf("|*Protocolo Bicicleta com rodinhas iniciado*|\n");
+  printf("|*******************************************|\n");
+  printf("|*******************************************|\n");
+  Sleep(3000);
 }
 void menu() {
   system("cls || clear");
