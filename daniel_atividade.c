@@ -9,6 +9,8 @@ void abertura() {
   system("cls|| clear");
   printf("|*****************************************|\n");
   printf("|***************BEM VINDO!!***************|\n");
+  printf("|********Primeira atividade individual****|\n");
+  printf("|****Protocolo Bicicleta com rodinhas*****|\n");
   printf("|*****************************************|\n");
 }
 void menu() {
@@ -27,32 +29,21 @@ void menu() {
 
   scanf("%d", &_INDICE);
 }
-void vetor_ao_cubo() {
 
-  int vetorInteiros[10];
-  int vetorAoCubo[10];
-  int indice;
-  system("cls|| clear");
-  printf("|[1] - Questao 1: Vetor ao cubo!          |\n");
-  printf("\nDigite 10 numeros inteiros!\n");
-  for (int i = 0; i < 10; i++) {
-    scanf("%d", &vetorInteiros[i]);
-    vetorAoCubo[i] = pow(vetorInteiros[i], 3);
-  }
-  printf("Vetor de inteiros | Vetor ao cubo\n");
-  for (int i = 0; i < 10; i++) {
-    printf("     %.2d           |         %d       \n", vetorInteiros[i],
-           vetorAoCubo[i]);
-  }
-
-  printf("[1] Para fazer a operacao novamente!\n");
-  printf("[2] Para voltar ao menu principal!\n");
-  printf("[3] Para sair do programa!\n");
+void submenu(void (*func)(void)) {
+  printf("\n___________________________________________\n");
+  printf("|Qual operacao deseja realizar?           |\n");
+  printf("|Digite o numero de sua escolha :         |\n");
+  printf("|-----------------------------------------|\n");
+  printf("|[1] Para fazer a operacao novamente!     |\n");
+  printf("|[2] Para voltar ao menu principal!       |\n");
+  printf("|[3] Para sair do programa!               |\n");
+  printf("|-----------------------------------------|\n");
   scanf(" %d", &_INDICE);
 
   switch (_INDICE) {
   case 1:
-    vetor_ao_cubo();
+    func();
   case 2:
     _INDICE = 10;
     break;
@@ -62,8 +53,29 @@ void vetor_ao_cubo() {
     _INDICE = 0;
     break;
   default:
-    printf("\nDigite uma operação válida! Opções: [1], [2] ou [3]\n");
+    printf("\nDigite uma operação valida! Opcoes: [1], [2] ou [3]\n");
   }
+}
+void vetor_ao_cubo() {
+
+  int vetorInteiros[10];
+  int vetorAoCubo[10];
+  system("cls|| clear");
+  printf("|[1] - Questao 1: Vetor ao cubo!          |\n");
+  printf("\nDigite 10 numeros inteiros!\n");
+  for (int i = 0; i < 10; i++) {
+    scanf("%d", &vetorInteiros[i]);
+    vetorAoCubo[i] = pow(vetorInteiros[i], 3);
+  }
+  system("cls||clear");
+  printf("___________________________________________\n");
+  printf("Vetor de inteiros | Vetor ao cubo\n");
+  for (int i = 0; i < 10; i++) {
+    printf("     %.2d           |         %d       \n", vetorInteiros[i],
+           vetorAoCubo[i]);
+  }
+  printf("------------------------------------------\n");
+  submenu(&vetor_ao_cubo);
 }
 void calcula_Y() {
   int vetorX[10];
@@ -72,7 +84,6 @@ void calcula_Y() {
   int vetorYcubico[10];
   system("cls||clear");
   printf("|[2] - Questao 2: Calcula funcao Y!       |\n");
-  // int indice;
 
   printf("\nDigite 10 numeros inteiros!\n");
   for (int i = 0; i < 10; i++) {
@@ -91,25 +102,8 @@ void calcula_Y() {
            vetorX[i], vetorY[i], vetorYquadrado[i], vetorYcubico[i]);
     printf("----------------------------------------------------------\n");
   }
-  printf("[1] Para fazer a operacao novamente!\n");
-  printf("[2] Para voltar ao menu principal!\n");
-  printf("[3] Para sair do programa!\n");
-  scanf(" %d", &_INDICE);
 
-  switch (_INDICE) {
-  case 1:
-    calcula_Y();
-  case 2:
-    _INDICE = 10;
-    break;
-  case 3:
-    system("cls || clear");
-    printf("\nObrigado por utilizar nosso sistema!");
-    _INDICE = 0;
-    break;
-  default:
-    printf("\nDigite uma operação válida! Opções: [1], [2] ou [3]\n");
-  }
+  submenu(&calcula_Y);
 }
 void soma_vetor() {
   int vetorInteiros[10];
@@ -127,24 +121,8 @@ void soma_vetor() {
     printf("%d|", vetorInteiros[i]);
   }
   printf("\nSoma: |%d|\n", soma);
-  printf("[1] Para fazer a operacao novamente!\n");
-  printf("[2] Para voltar ao menu principal!\n");
-  printf("[3] Para sair do programa!\n");
-  scanf(" %d", &_INDICE);
-  switch (_INDICE) {
-  case 1:
-    soma_vetor();
-  case 2:
-    _INDICE = 10;
-    break;
-  case 3:
-    system("cls || clear");
-    printf("\nObrigado por utilizar nosso sistema!");
-    _INDICE = 0;
-    break;
-  default:
-    printf("\nDigite uma operação válida! Opções: [1], [2] ou [3]\n");
-  }
+
+  submenu(&soma_vetor);
 }
 void busca_vetor() {
   int indice = 0;
@@ -159,6 +137,7 @@ void busca_vetor() {
   }
   printf("\nDigite uma chave para a busca...\n");
   scanf(" %d", &chave);
+  system("cls || clear");
 
   printf("\nPosicoes         : |");
   for (int i = 0; i < 20; i++) {
@@ -180,28 +159,11 @@ void busca_vetor() {
     for (int i = 0; i < indice; i++) {
       printf("%d|", vetorChaves[i]);
     }
+    printf("\n");
   } else {
     printf("\n\nChave <%d> nao encontrada!!\n", chave);
   }
-  printf("[1] Para fazer a operacao novamente!\n");
-  printf("[2] Para voltar ao menu principal!\n");
-  printf("[3] Para sair do programa!\n");
-  scanf(" %d", &_INDICE);
-
-  switch (_INDICE) {
-  case 1:
-    busca_vetor();
-  case 2:
-    _INDICE = 10;
-    break;
-  case 3:
-    system("cls || clear");
-    printf("\nObrigado por utilizar nosso sistema!");
-    _INDICE = 0;
-    break;
-  default:
-    printf("\nDigite uma operação válida! Opções: [1], [2] ou [3]\n");
-  }
+  submenu(&busca_vetor);
 }
 void calculo_determinante() {
   int matriz[2][2];
@@ -216,8 +178,8 @@ void calculo_determinante() {
       scanf(" %d", &matriz[i][j]);
     }
   }
-
-  printf("\nMatrtiz \n");
+  system("cls || clear");
+  printf("\nMatriz \n");
   for (int i = 0; i < 2; i++) {
     for (int j = 0; j < 2; j++) {
       printf("|%.2d|", matriz[i][j]);
@@ -228,27 +190,9 @@ void calculo_determinante() {
   diagonalPrincipal = matriz[0][0] * matriz[1][1];
   diagonalSecundaria = matriz[0][1] * matriz[1][0];
   determinante = diagonalPrincipal - diagonalSecundaria;
-  printf("Determinante: %d", determinante);
+  printf("Determinante: |%d|\n", determinante);
 
-  printf("\n[1] Para fazer a operacao novamente!\n");
-  printf("[2] Para voltar ao menu principal!\n");
-  printf("[3] Para sair do programa!\n");
-  scanf(" %d", &_INDICE);
-
-  switch (_INDICE) {
-  case 1:
-    calculo_determinante();
-  case 2:
-    _INDICE = 10;
-    break;
-  case 3:
-    system("cls || clear");
-    printf("\nObrigado por utilizar nosso sistema!");
-    _INDICE = 0;
-    break;
-  default:
-    printf("\nDigite uma operação válida! Opções: [1], [2] ou [3]\n");
-  }
+  submenu(&calculo_determinante);
 }
 int main() {
 
