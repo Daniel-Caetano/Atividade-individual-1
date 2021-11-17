@@ -75,12 +75,12 @@ void soma_vetor() {
 void busca_vetor() {
   int indice = 0;
   int chave;
-  int vetorInteiros[] = {1,  2, 3,  4,  5,  6,  7, 8,  9,  10,
-                         11, 2, 13, 14, 15, 16, 2, 18, 19, 2};
+  int vetorInteiros[20];
   int vetorChaves[20];
+
   printf("\nDigite 20 numeros inteiros!\n");
   for (int i = 0; i < 20; i++) {
-    // scanf("%d", &vetorInteiros[i]);
+    scanf("%d", &vetorInteiros[i]);
   }
   printf("\nDigite uma chave para a busca...\n");
   scanf(" %d", &chave);
@@ -110,8 +110,34 @@ void busca_vetor() {
   }
 }
 
+void calculo_determinante() {
+  int matriz[2][2];
+  int diagonalPrincipal;
+  int diagonalSecundaria;
+  int determinante;
+
+  printf("\nDigite 4 numeros inteiros para matriz 2x2!\n");
+  for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 2; j++) {
+      scanf(" %d", &matriz[i][j]);
+    }
+  }
+
+  printf("\nMatrtiz \n");
+  for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 2; j++) {
+      printf("|%.2d|", matriz[i][j]);
+    }
+    printf("\n");
+  }
+
+  diagonalPrincipal = matriz[0][0] * matriz[1][1];
+  diagonalSecundaria = matriz[0][1] * matriz[1][0];
+  determinante = diagonalPrincipal - diagonalSecundaria;
+  printf("Determinante: %d", determinante);
+}
 int main() {
   do {
-    busca_vetor();
+    calculo_determinante();
   } while (_INDICE);
 }
