@@ -6,6 +6,8 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <windows.h>
 
 int _INDICE = 10;
 void abertura() {
@@ -56,6 +58,7 @@ void submenu(void (*func)(void)) {
     break;
   default:
     printf("\nOpcao invalida, voltando ao menu iniciar!\n");
+    Sleep(2000);
     _INDICE = 10;
     break;
   }
@@ -230,13 +233,15 @@ int main() {
     case 5:
       calculo_determinante();
       break;
+
     case 6:
       printf("\nObrigado por utilizar nosso sistema!\n");
       _INDICE = 0;
       break;
+
     default:
       printf("Comando invalido!");
-      break;
+      Sleep(2000);
     }
   } while (_INDICE);
   system("pause");
