@@ -72,9 +72,46 @@ void soma_vetor() {
   }
   printf("\nSoma: |%d|", soma);
 }
+void busca_vetor() {
+  int indice = 0;
+  int chave;
+  int vetorInteiros[] = {1,  2, 3,  4,  5,  6,  7, 8,  9,  10,
+                         11, 2, 13, 14, 15, 16, 2, 18, 19, 2};
+  int vetorChaves[20];
+  printf("\nDigite 20 numeros inteiros!\n");
+  for (int i = 0; i < 20; i++) {
+    // scanf("%d", &vetorInteiros[i]);
+  }
+  printf("\nDigite uma chave para a busca...\n");
+  scanf(" %d", &chave);
+
+  printf("\nPosicoes         : |");
+  for (int i = 0; i < 20; i++) {
+    printf("%.2d|", i + 1);
+  }
+  printf("\nVetor de inteiros: |");
+  for (int i = 0; i < 20; i++) {
+    printf("%.2d|", vetorInteiros[i]);
+  }
+
+  for (int i = 0; i < 20; i++) {
+    if (vetorInteiros[i] == chave) {
+      vetorChaves[indice] = i + 1;
+      indice++;
+    }
+  }
+  if (indice) {
+    printf("\n\nA chave <%d> esta na posicao: |", chave);
+    for (int i = 0; i < indice; i++) {
+      printf("%d|", vetorChaves[i]);
+    }
+  } else {
+    printf("\n\nChave <%d> nao encontrada!!", chave);
+  }
+}
 
 int main() {
   do {
-    soma_vetor();
+    busca_vetor();
   } while (_INDICE);
 }
