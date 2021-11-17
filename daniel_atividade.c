@@ -80,29 +80,38 @@ void vetor_ao_cubo() {
   submenu(&vetor_ao_cubo);
 }
 void calcula_Y() {
-  int vetorX[10];
-  int vetorY[10];
-  int vetorYquadrado[10];
-  int vetorYcubico[10];
+
+  float vetorX[10];
+  float vetorY[10];
+  float vetorYquadrado[10];
+  float vetorYcubico[10];
+
   system("cls||clear");
   printf("|[2] - Questao 2: Calcula funcao Y!       |\n");
 
-  printf("\nDigite 10 numeros inteiros!\n");
+  printf("\nDigite 10 numeros !\n");
   for (int i = 0; i < 10; i++) {
-    scanf("%d", &vetorX[i]);
-    vetorY[i] = (2 * vetorX[i]) + 1;
+    scanf("%f", &vetorX[i]);
+    vetorY[i] = (2.0 * vetorX[i]) + 1.0;
     vetorYquadrado[i] = pow(vetorX[i], 2);
     vetorYcubico[i] = pow(vetorX[i], 3);
   }
   system("cls || clear");
-  printf("__________________________________________________________\n");
-  printf("||Vetor X | Vetor Y(2X+1) | Vetor Y^2  |    Vetor Y^3   ||\n");
-  printf("----------------------------------------------------------\n");
+  printf(
+      "_______________________________________________________________________"
+      "__________________________________"
+      "\n");
+
   for (int i = 0; i < 10; i++) {
-    printf("||   %.2d   |      %.2d       |     %.3d    |      %.4d      |"
-           "|\n",
+    printf("||Vetor X: %.2f   |Vetor Y(2X+1): %.2f   | Vetor Y^2: %.2f   |  "
+           "    "
+           "Vetor Y^3: %.2f   "
+           "\n",
            vetorX[i], vetorY[i], vetorYquadrado[i], vetorYcubico[i]);
-    printf("----------------------------------------------------------\n");
+    printf(
+        "---------------------------------------------------------------------"
+        "-----------------------------------"
+        "-\n");
   }
 
   submenu(&calcula_Y);
