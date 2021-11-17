@@ -1,4 +1,4 @@
-int _INDICE = 10;
+extern int _INDICE;
 void abertura();
 void menu();
 void submenu(void (*func)(void));

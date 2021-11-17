@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
+int extern _INDICE =10;
 
 int main() {
 
