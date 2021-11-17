@@ -1,4 +1,6 @@
 // Autor: Daniel Caetano de Souza Ferreira
+// Data: 17/11/2021
+// Primeira Atividade individual
 
 #include "daniel_atividade.h"
 #include <math.h>
