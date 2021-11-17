@@ -1,5 +1,6 @@
 // Autor: Daniel Caetano de Souza Ferreira
 
+#include "daniel_atividade.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,7 +30,6 @@ void menu() {
 
   scanf("%d", &_INDICE);
 }
-
 void submenu(void (*func)(void)) {
   printf("\n___________________________________________\n");
   printf("|Qual operacao deseja realizar?           |\n");
@@ -53,7 +53,9 @@ void submenu(void (*func)(void)) {
     _INDICE = 0;
     break;
   default:
-    printf("\nDigite uma operação valida! Opcoes: [1], [2] ou [3]\n");
+    printf("\nOpcao invalida, voltando ao menu iniciar!\n");
+    _INDICE = 10;
+    break;
   }
 }
 void vetor_ao_cubo() {
@@ -223,6 +225,7 @@ int main() {
       break;
     default:
       printf("Comando invalido!");
+      break;
     }
   } while (_INDICE);
   system("pause");
